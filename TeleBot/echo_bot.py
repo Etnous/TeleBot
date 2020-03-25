@@ -13,7 +13,7 @@ def echo_all(message):
     
 @bot.message_handler(commands=['help'])
 def send_help(message):
-    bot.reply_to(message, "有什么好帮你的？？？？")
+    bot.send_message(reply_to_message_id=message.message_id, chat_id=message.chat.id, text='可以帮你不？')
     
 if __name__ == '__main__':
     bot.polling()
