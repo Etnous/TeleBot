@@ -5,8 +5,6 @@ import subprocess
 import argparse
 import threading
 
-ping_res = {}
-
 class PingService(Service):
 
     def on_connect(self, conn):
@@ -18,6 +16,7 @@ class PingService(Service):
         pass
 
     def ping_test(self, ip):
+        ping_res = {}
         try:
             command = "ping {}".format(ip)
             output = subprocess.run(command, timeout=60, shell=True, universal_newlines=True)
