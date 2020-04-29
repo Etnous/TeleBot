@@ -19,7 +19,7 @@ class PingService(Service):
         global ping_res
         ping_res = {}
         try:
-            command = "ping {}".format(ip)
+            command = "ping -c 4 {}".format(ip)
             output = subprocess.run(command, timeout=60, shell=True, universal_newlines=True)
             ping_res[ip] = output.returncode
         except subprocess.TimeoutExpired:
