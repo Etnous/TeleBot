@@ -6,11 +6,11 @@ import argparse
 import threading
 
 class PingService(Service):
-
+    # when connected
     def on_connect(self, conn):
         # print('\nconnected on {}'.format(date_time))
         pass
-
+    # when disconnected
     def on_disconnect(self, conn):
         # print('Disonnect on {}\n'.format(date_time))
         pass
